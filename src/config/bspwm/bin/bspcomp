@@ -26,4 +26,4 @@ killall -q picom
 while pgrep -u $UID -x picom >/dev/null; do sleep 1; done
 
 # Launch picom #
-picom -b --experimental-backends --config ${BSPWM_DIR}/picom/${PICOM} &
+picom -b --config ${BSPWM_DIR}/picom/${PICOM} &

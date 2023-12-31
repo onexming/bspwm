@@ -12,6 +12,11 @@ env:
   TERM: alacritty
   WINIT_X11_SCALE_FACTOR: '1.0'
 
+shell:
+ program: /usr/bin/fish
+ args:
+   - --login
+
 ## Terminal window settings
 window:
   dimensions:

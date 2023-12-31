@@ -10,8 +10,8 @@
 ##---------- Toggle right click context menu. ----------##
 
 # Toggle right click context menu. #
-~button3
-  xqp 0 $(xdo id -N Bspwm -n root) && jgmenu_run
+# ~button3
+#   xqp 0 $(xdo id -N Bspwm -n root) && jgmenu_run
 
 ##---------- Keybindings for bspwm ----------##
 
@@ -30,8 +30,8 @@ super + t
 ##---------- Rofi Launcher & Menus ----------##
 
 # Rofi App Launcher #
-alt + F1
-	sh ~/.config/bspwm/rofi/bin/launcher
+# alt + F1
+# 	sh ~/.config/bspwm/rofi/bin/launcher
 
 # Rofi Network Menu #
 super + n
@@ -48,8 +48,10 @@ super + {w,m,x,r,s,i}
 ##---------- Applications ----------##
 
 # Open/close dashboard #
+# super + d
+# 	sh ~/.config/eww/dashboard/launch_dashboard
 super + d
-	sh ~/.config/eww/dashboard/launch_dashboard
+	sh ~/.config/bspwm/rofi/bin/launcher
 
 # Launch Apps #
 super + shift + {g,e}
@@ -119,7 +121,7 @@ XF86Audio{Mute,MicMute}
 ##---------- Bspwm ----------##
 
 # Close App #
-super + {_,shift + }c
+super + {_,shift + }q
 	bspc node -{c,k}
 
 # Reload Keybindings #
@@ -127,8 +129,10 @@ super + Escape
 	pkill -USR1 -x sxhkd
 
 # kill window #
-ctrl + alt + Escape
-    xkill
+# ctrl + alt + Escape
+#     xkill
+# super + shift + q
+#     xkill
 
 # Quit/Restart bspwm #
 ctrl + shift + {q,r}
@@ -212,5 +216,9 @@ alt + shift + {Left,Down,Up,Right}
 #  Hide/Unhide Window #
 super + shift + i
 	winmask		
+
+# tdrop
+super + u
+	tdrop -a -w 70% -h 35% -y 0 -x 15%  --class alacritty-float alacritty --class=alacritty-float
 
 ## ---------- END ---------- ##

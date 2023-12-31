@@ -2,7 +2,7 @@
 # Maintainer: Mahmoud Mohamed (00xWolf) <mmsaeed509@gmail.com> , <https://github.com/mmsaeed509>
 #
 
-pkgname=exodia-bspwm
+pkgname=onx-bspwm
 pkgver=8.0
 pkgrel=1
 pkgdesc="BSPWM Config For Exodia OS"
@@ -10,17 +10,16 @@ arch=('any')
 url="https://github.com/Exodia-OS/exodia-bspwm"
 license=('GPL3')
 install=${pkgname}.install
-conflicts=('exodia-bspwm-predator')
 depends=(
 
-	'bspwm' 'sxhkd' 'alacritty' 'thunar' 'geany' 'xdo'
-	'rofi' 'polybar' 'dunst' 'mpd' 'mpc' 'maim' 'xqp'
-	'xclip' 'viewnior' 'feh' 'ksuperkey' 'betterlockscreen'
-	'xfce4-power-manager' 'xsettingsd' 'xorg-xsetroot'
-	'wmname' 'xsensors' 'stacer' 'powershell-preview-bin'
-	'exodia-oh-my-posh' 'jgmenu' 'exodia-jgmenu' 'lsd'
-	'mesa-utils' 'exodia-assistant' 'exodia-backgrounds'
-	
+	'bspwm' 'sxhkd' 'alacritty' 'xdo' 'rofi' 'polybar' 
+	'dunst' 'mpd' 'mpc' 'maim' 'xsettingsd' 'xorg-xsetroot'
+	'wmname' 'xsensors' 'stacer' 'lsd' 'mesa-utils' 'ttf-font-awesome'
+	'fish' 'ranger' 'fcitx5-chinese-addons' 'fcitx5-pinyin-zhwiki'
+	'fcitx5-config-qt' 'fcitx5-breeze' 'fcitx5-rime' 'nextcloud-client'
+	'woff-fira-code' 'picom' 'feh' 'tdrop' 'gtk-engine-murrine' 'jq'
+	'cava' 'ttf-lxgw-wenkai'
+
 )
 
 prepare() {

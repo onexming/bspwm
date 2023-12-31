@@ -36,9 +36,9 @@ USER=`echo ${SUDO_USER:-$(whoami)}`
 GID=`echo ${SUDO_GID}`
 GROUB=`cat /etc/group | grep ${GID} | cut -d: -f1 | head -1`
 CONFIG_DIR="/home/${USER}/.config"
-BACKUP_DIR="/home/${USER}/.config/exodia-backups"
+BACKUP_DIR="/home/${USER}/.config/onx-backups"
 CONFIG_DIR_SKEL='/etc/skel/.config'
-PKG_NAME='exodia-bspwm'
+PKG_NAME='onx-bspwm'
 FILES_NAME='bspwm'
 
 # Get user config #
@@ -143,6 +143,10 @@ BACKUP (){
 
 }
 
+update(){
+	sed -i "/$2/d" $1; echo $2$3 >> $1
+}
+
 # INSTALL FUNCTION #
 INSTALL (){
 
@@ -157,8 +161,8 @@ INSTALL (){
 	echo -e ${BBlue}"   ==> copying ${BPurple}${FILES_NAME} ${BBlue}config files to the ${BPurple}config ${BBlue}directory." ${RESET_COLOR}
 	cp -rf ${CONFIG_DIR_SKEL}/${FILES_NAME} ${CONFIG_DIR}
 
-	echo -e ${BBlue}"   ==> ${BRed}disable ${BCyan}exodia-welcome ${BBlue}and ${BYellow}enable ${BCyan}exodia-assistant${BBlue}." ${RESET_COLOR}
-	sed -i 's/exodia-welcome/exodia-assistant/g' ${CONFIG_DIR}/${FILES_NAME}/bspwmrc
+	update ~/.Xresources Xft.dpi: 144
+	update ~/.Xresources Xcursor.size: 32
 
 	if [[ -f "${CONFIG_DIR}/${FILES_NAME}/exodia.conf" && ${RESTORE_USER_CONFIG_STATUS} == "true" ]]
 			

@@ -22,7 +22,6 @@ fi
 
 # remove all rules first #
 bspc rule -r *:*
-
 # Check the status of #
 if [[ ${MODE_STATUS} == "true" ]];
    
@@ -39,7 +38,8 @@ else
       
       do
          
-         bspc rule -a $i desktop='^1' follow=on focus=on;
+         # bspc rule -a $i desktop='^1' follow=on focus=on;
+         :
       
       done
    
@@ -49,14 +49,15 @@ else
       
       do
          
-         bspc rule -a $i desktop='^2' state=floating follow=on focus=on;
+         # bspc rule -a $i desktop='^2' state=floating follow=on focus=on;
+         :
       
       done
    
-   bspc rule -a firefox desktop='^2' follow=on focus=on
-   bspc rule -a chromium desktop='^2' follow=on focus=on
-   bspc rule -a Google-chrome desktop='^2' follow=on focus=on
-   bspc rule -a Brave-browser desktop='^2' follow=on focus=on
+   # bspc rule -a firefox desktop='^2' follow=on focus=on
+   # bspc rule -a chromium desktop='^2' follow=on focus=on
+   # bspc rule -a Google-chrome desktop='^2' follow=on focus=on
+   # bspc rule -a Brave-browser desktop='^2' follow=on focus=on
    
    
    # ----- apps open in files workspaces ----- #
@@ -65,21 +66,23 @@ else
       
       do
          
-         bspc rule -a $i desktop='^3' follow=on focus=on;
+         # bspc rule -a $i desktop='^3' follow=on focus=on;
+         :
       
       done
    
    # ----- apps open in code workspaces ----- #
-   declare -a code=(Geany code-oss Code kate Leafpad)
+   declare -a code=(Geany Code kate Leafpad)
    for i in ${code[@]};
       
       do
          
-         bspc rule -a $i desktop='^4' follow=on focus=on;
+         # bspc rule -a $i desktop='^4' follow=on focus=on;
+         :
             
       done
    
-   bspc rule -a github-desktop desktop ='^4' state=floating follow=on focus=on
+   # bspc rule -a github-desktop desktop ='^4' state=floating follow=on focus=on
    
    # jetBrains IDEs #
    declare -a jetBrains=(jetbrains-clion jetbrains-idea jetbrains-pycharm jetbrains-fleet Toolbox)
@@ -87,12 +90,13 @@ else
       
       do
          
-         bspc rule -a $i desktop='^4' state=floating follow=on focus=on;
+         # bspc rule -a $i desktop='^4' state=floating follow=on focus=on;
+         :
       
       done
    
    # Markdown editors #
-   bspc rule -a inkdrop desktop ='^4' state=floating follow=on focus=on
+   # bspc rule -a inkdrop desktop ='^4' state=floating follow=on focus=on
    
    
    # ----- apps open in office and docs workspaces ----- #
@@ -104,7 +108,8 @@ else
       
       do
          
-         bspc rule -a $i desktop='^5' follow=on focus=on;
+         # bspc rule -a $i desktop='^5' follow=on focus=on;
+         :
       
       done
    
@@ -114,7 +119,8 @@ else
       
       do
          
-         bspc rule -a $i desktop='^6' state=floating follow=on focus=on;
+         # bspc rule -a $i desktop='^6' state=floating follow=on focus=on;
+         :
       
       done
    
@@ -124,22 +130,23 @@ else
       
       do
          
-         bspc rule -a $i desktop='^7' state=floating follow=on focus=on;
+         # bspc rule -a $i desktop='^7' state=floating follow=on focus=on;
+         :
       
       done
       
    
    # ----- apps open in settings workspaces ----- #
-   bspc rule -a 'VirtualBox Manager' desktop='^8' follow=on focus=on
-   bspc rule -a GParted desktop='^8' follow=on focus=on
+   # bspc rule -a 'VirtualBox Manager' desktop='^8' follow=on focus=on
+   # bspc rule -a GParted desktop='^8' follow=on focus=on
    declare -a settings=(Lxappearance Lxtask Lxrandr Arandr \
    System-config-printer.py Pavucontrol Exo-helper-1 \
    Xfce4-power-manager-settings)
    for i in ${settings[@]}; do
       bspc rule -a $i desktop='^8' state=floating follow=on focus=on; done
    
-   bspc rule -a stacer desktop ='^8' state=floating follow=on focus=on
-   bspc rule -a Xsensors desktop ='^8' state=floating follow=on focus=on
+   # bspc rule -a stacer desktop ='^8' state=floating follow=on focus=on
+   # bspc rule -a Xsensors desktop ='^8' state=floating follow=on focus=on
    
    # ----- special rules ----- #
    declare -a floating=(alacritty-float Pcmanfm Onboard Yad 'Firefox:Places' \

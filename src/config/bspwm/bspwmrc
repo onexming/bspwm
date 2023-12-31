@@ -11,6 +11,7 @@
 
 # Environtment path #
 export PATH="${PATH}:$HOME/.config/bspwm/bin:$HOME/.config/bspwm/rofi/bin:$HOME/.local/bin:$HOME/.local/share/virtualenv/pip/bin"
+export $(envsubst < $HOME/.config/bspwm/env)
 
 # bspwm config directory #
 BSPWM_DIR="$HOME/.config/bspwm"
@@ -39,7 +40,7 @@ if [[ -z "$COLOR_SCHEME" ]];
 	
 	then
 	
-		COLOR_SCHEME="Japanese Street 2"
+		COLOR_SCHEME="ONX"
 fi
 
 cat "${BSPWM_DIR}/themes/${COLOR_SCHEME}/colorScheme" > "${XRES}"/colors
@@ -72,7 +73,8 @@ workspaces() {
 	for monitor in `bspc query -M`; 
 		do
 
-			bspc monitor ${monitor} -n "$name" -d '' '' '' '' '' '' '' ''
+			# bspc monitor ${monitor} -n "$name" -d '' '' '' '' '' '' '' ''
+			bspc monitor ${monitor} -n "$name" -d '1' '2' '3' '4' '5' '6' '7' '8'
 			let name++
 
 	done
@@ -98,7 +100,7 @@ bsprules
 ##  ------------------------- Autostart Apps -------------------------  ##
 
 # Kill if already running #
-killall -9 xsettingsd sxhkd dunst ksuperkey xfce4-power-manager bspc picom
+killall -9 xsettingsd sxhkd dunst bspc picom
 # ------------------------------------------------------------------------------ #
 
 # Lauch xsettingsd daemon #
@@ -106,13 +108,13 @@ xsettingsd --config="${BSPWM_DIR}"/xsettingsd &
 # ------------------------------------------------------------------------------ #
 
 # polkit agent #
-if [[ ! `pidof xfce-polkit` ]];
+# if [[ ! `pidof xfce-polkit` ]];
 	
-	then
+# 	then
 		
-		/usr/lib/xfce-polkit/xfce-polkit &
+# 		/usr/lib/xfce-polkit/xfce-polkit &
 
-fi
+# fi
 # ------------------------------------------------------------------------------ #
 
 # Lauch keybindings daemon #
@@ -125,15 +127,6 @@ KEYBINDING=$(grep -oP 'keybinding = \K.*' "${BSPWM_DIR}/exodia.conf")
 	fi
 
 sxhkd -c "${BSPWM_DIR}"/keybinding/${KEYBINDING} &
-# ------------------------------------------------------------------------------ #
-
-# Enable Super Keys For Menu #
-ksuperkey -e 'Super_L=Alt_L|F1' &
-ksuperkey -e 'Super_R=Alt_L|F1' &
-# ------------------------------------------------------------------------------ #
-
-# Enable power manager #
-xfce4-power-manager &
 # ------------------------------------------------------------------------------ #
 
 # Fix cursor #
@@ -151,12 +144,10 @@ BACKGROUND=$(grep -oP 'background = \K.*' "${BSPWM_DIR}/exodia.conf")
 feh --no-fehbg --bg-fill ${BACKGROUND}
 # ------------------------------------------------------------------------------ #
 
-# enable num lock #
-numlockx &
-# ------------------------------------------------------------------------------ #
-
 # Start mpd #
 exec mpd &
+fcitx5 -d
+sleep 10 && nextcloud &
 # ------------------------------------------------------------------------------ #
 
 # start bspwm scripts #
@@ -165,23 +156,5 @@ bspcomp
 bspbar
 bspdunst 
 bspfloat &
-# ------------------------------------------------------------------------------ #
-
-# Lauch Exodia OS Assistant #
-STATUS=$(grep -Po 'exodia-assistant-auto-start\s*=\s*\K.*' ${BSPWM_DIR}/exodia.conf)
-
-if [[ -z "$STATUS" ]];
-	
-	then
-	
-		exodia-welcome
-
-elif [[ ${STATUS} == "true" ]];
-	
-	then
-
-    	exodia-welcome
-
-fi
 
 ##  ------------------------------------- END --------------------------------------------------  ##
