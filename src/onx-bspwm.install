@@ -161,8 +161,8 @@ INSTALL (){
 	echo -e ${BBlue}"   ==> copying ${BPurple}${FILES_NAME} ${BBlue}config files to the ${BPurple}config ${BBlue}directory." ${RESET_COLOR}
 	cp -rf ${CONFIG_DIR_SKEL}/${FILES_NAME} ${CONFIG_DIR}
 
-	update ~/.Xresources Xft.dpi: 144
-	update ~/.Xresources Xcursor.size: 32
+	update ${USER}/.Xresources Xft.dpi: 144
+	update ${USER}/.Xresources Xcursor.size: 32
 
 	if [[ -f "${CONFIG_DIR}/${FILES_NAME}/exodia.conf" && ${RESTORE_USER_CONFIG_STATUS} == "true" ]]
 			

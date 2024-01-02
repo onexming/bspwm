@@ -108,13 +108,13 @@ xsettingsd --config="${BSPWM_DIR}"/xsettingsd &
 # ------------------------------------------------------------------------------ #
 
 # polkit agent #
-# if [[ ! `pidof xfce-polkit` ]];
+if [[ ! `pidof polkit-gnome-authentication-agent-1` ]];
 	
-# 	then
+	then
 		
-# 		/usr/lib/xfce-polkit/xfce-polkit &
+		/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
-# fi
+fi
 # ------------------------------------------------------------------------------ #
 
 # Lauch keybindings daemon #
@@ -135,19 +135,19 @@ xsetroot -cursor_name left_ptr
 
 # restore wallpaper #
 BACKGROUND=$(grep -oP 'background = \K.*' "${BSPWM_DIR}/exodia.conf")
-	if [[ -z "$BACKGROUND" ]];
-
-		then
-
-			BACKGROUND=/usr/share/backgrounds/JapaneseCity.png
-	fi
+	# if [[ -z "$BACKGROUND" ]];
+	# 	then
+	# 		BACKGROUND=/usr/share/backgrounds/JapaneseCity.png
+	# fi
 feh --no-fehbg --bg-fill ${BACKGROUND}
 # ------------------------------------------------------------------------------ #
 
-# Start mpd #
-exec mpd &
-fcitx5 -d
-sleep 10 && nextcloud &
+declare -a start=(mpd fcitx5 nextcloud kdeconnect-indicator)
+for i in ${start[@]};do
+	if [[ ! `pidof $i` ]];then
+		$i &
+	fi
+done
 # ------------------------------------------------------------------------------ #
 
 # start bspwm scripts #

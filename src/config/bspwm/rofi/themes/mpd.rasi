@@ -60,7 +60,7 @@ inputbar {
     border-radius:               20px;
     border-color:                @selected;
     background-color:            transparent;
-    background-image:            url("/home/onx/Pictures/backiee-282556-landscape.jpg", width);
+    background-image:            url("/home/onx/.config/bspwm/themes/ONX/p1.jpg", width);
     text-color:                  @foreground;
     children:                    [ "dummy", "textbox-prompt-colon", "prompt", "dummy"];
 }

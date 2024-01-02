@@ -112,7 +112,7 @@ ws-icon-8 = IX;
 ws-icon-default = 
 
 format = <label-state>
-format-font = 3
+format-font = 2
 
 label-monitor = %name%
 
@@ -142,7 +142,7 @@ label-empty-padding = 0
 
 ; Separator in between workspaces
 label-separator = "|"
-label-separator-padding = 1
+label-separator-padding = 5px
 label-separator-foreground = ${color.BG}
 label-separator-background = ${color.BGL}
 

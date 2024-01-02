@@ -14,11 +14,11 @@ depends=(
 
 	'bspwm' 'sxhkd' 'alacritty' 'xdo' 'rofi' 'polybar' 
 	'dunst' 'mpd' 'mpc' 'maim' 'xsettingsd' 'xorg-xsetroot'
-	'wmname' 'xsensors' 'stacer' 'lsd' 'mesa-utils' 'ttf-font-awesome'
+	'wmname' 'xsensors' 'lsd' 'mesa-utils' 'ttf-font-awesome'
 	'fish' 'ranger' 'fcitx5-chinese-addons' 'fcitx5-pinyin-zhwiki'
 	'fcitx5-config-qt' 'fcitx5-breeze' 'fcitx5-rime' 'nextcloud-client'
 	'woff-fira-code' 'picom' 'feh' 'tdrop' 'gtk-engine-murrine' 'jq'
-	'cava' 'ttf-lxgw-wenkai'
+	'cava' 'ttf-lxgw-wenkai' 'tmux' 'neovim' 'kio5' 'dolphin' 'kdeconnect'
 
 )
 

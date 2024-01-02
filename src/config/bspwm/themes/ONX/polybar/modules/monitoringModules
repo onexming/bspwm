@@ -71,7 +71,7 @@ format = <label>
 format-prefix = "󰏈"
 format-prefix-font = 5
 
-label = "%{A1:alacritty --config-file ~/.config/bspwm/alacritty/alacritty.yml -e htop &:}%output: 6:10%%{A}"
+label = "%{A1:alacritty --config-file ~/.config/bspwm/alacritty/alacritty.toml -e htop &:}%output: 6:10%%{A}"
 label-padding = 1
 label-font = 3
 format-prefix-foreground = #FAE620
@@ -86,7 +86,7 @@ format = <label>
 format-prefix = "󰍛"
 format-prefix-font = 5
 
-label = "%{A1:alacritty --config-file ~/.config/bspwm/alacritty/alacritty.yml -e htop &:}%output: 2:10%GB%{A}"
+label = "%{A1:alacritty --config-file ~/.config/bspwm/alacritty/alacritty.toml -e htop &:}%output: 2:10%GB%{A}"
 label-font = 3
 label-padding = 1
 format-prefix-foreground = #d19a66
@@ -106,7 +106,7 @@ format-prefix = ""
 format-prefix-font = 5
 format-prefix-foreground =  ${color.GREEN}
 
-click-left = "alacritty --config-file ~/.config/bspwm/alacritty/alacritty.yml -e sudo pacman -Syyu"
+click-left = "alacritty --class alacritty-float --config-file ~/.config/bspwm/alacritty/alacritty.toml -e sudo pacman -Syyu"
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
@@ -147,7 +147,7 @@ format-unmounted-prefix-font = 2
 format-unmounted-prefix-foreground = ${color.CYAN}
 format-unmounted-prefix-background = ${color.BGL}
 
-label-mounted = "%{A1:alacritty --config-file ~/.config/bspwm/alacritty/alacritty.yml -e duf &:} %free%%{A}"
+label-mounted = "%{A1:alacritty --config-file ~/.config/bspwm/alacritty/alacritty.toml -e duf &:} %free%%{A}"
 label-mounted-font = 4
 label-unmounted = " %mountpoint%: NA"
 label-unmounted-font = 4

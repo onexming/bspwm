@@ -334,7 +334,7 @@ content-font = 5
 content-foreground = #9FEF00
 content-padding = 0
 
-click-left = alacritty --config-file ~/.config/bspwm/alacritty/alacritty.yml
+click-left = alacritty --config-file ~/.config/bspwm/alacritty/alacritty.toml
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 

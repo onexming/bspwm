@@ -111,8 +111,8 @@ format-unmounted-prefix-font = 3
 format-unmounted-prefix-foreground = #D78FFE
 format-unmounted-prefix-background = ${color.background-bar}
 
-label-mounted = "%{A1:alacritty --config-file ~/.config/bspwm/alacritty/alacritty.yml -e ncdu &:} %free%%{A}"
-; label-mounted = "%{A1:alacritty --config-file ~/.config/bspwm/alacritty/alacritty.yml -e ncdu &:} %free%%{A}"
+label-mounted = "%{A1:alacritty --config-file ~/.config/bspwm/alacritty/alacritty.toml -e ncdu &:} %free%%{A}"
+; label-mounted = "%{A1:alacritty --config-file ~/.config/bspwm/alacritty/alacritty.toml -e ncdu &:} %free%%{A}"
 label-unmounted = " %mountpoint%: NA"
 label-mounted-foreground = #D78FFE
 
@@ -142,7 +142,7 @@ format-prefix-foreground = #D78FFE
 
 
 ; label = "%mb_used%"
-label = "%{A1:alacritty --config-file ~/.config/bspwm/alacritty/alacritty.yml -e htop &:} %gb_used%%{A}"
+label = "%{A1:alacritty --config-file ~/.config/bspwm/alacritty/alacritty.toml -e htop &:} %gb_used%%{A}"
 label-foreground = #D78FFE
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
@@ -153,7 +153,7 @@ exec = ~/.config/bspwm/themes/The\\ Warriors/polybar/scripts/updates-pacman.sh
 interval = 180
 format = <label>
 
-label = "%{A1:alacritty --config-file ~/.config/bspwm/alacritty/alacritty.yml -e sudo pacman -Syyu &:}  %output% updates%{A}"
+label = "%{A1:alacritty --config-file ~/.config/bspwm/alacritty/alacritty.toml -e sudo pacman -Syyu &:}  %output% updates%{A}"
 
 format-font = 3
 label-foreground = #D78FFE
