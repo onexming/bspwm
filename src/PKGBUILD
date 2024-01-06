@@ -19,6 +19,7 @@ depends=(
 	'fcitx5-config-qt' 'fcitx5-breeze' 'fcitx5-rime' 'nextcloud-client'
 	'woff-fira-code' 'picom' 'feh' 'tdrop' 'gtk-engine-murrine' 'jq'
 	'cava' 'ttf-lxgw-wenkai' 'tmux' 'neovim' 'kio5' 'dolphin' 'kdeconnect'
+	'breeze-icons' 'fcitx5-gtk'
 
 )
 

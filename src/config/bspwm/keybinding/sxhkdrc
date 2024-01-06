@@ -33,10 +33,6 @@ super + t
 # alt + F1
 # 	sh ~/.config/bspwm/rofi/bin/launcher
 
-# Rofi Network Menu #
-super + n
-	nmd
-
 # Rofi Themes Menu #
 ctrl + alt + t
 	sh ~/.config/bspwm/rofi/bin/themes
@@ -59,7 +55,7 @@ super + shift + {g,e}
 
 # Terminal Apps #
 ctrl + alt + {r,h,b,n,v}
-	alacritty --config-file ~/.config/bspwm/alacritty/alacritty.toml -e {ranger,htop,bashtop,nvim,vim}
+	alacritty --config-file ~/.config/bspwm/alacritty/alacritty.yml -e {ranger,htop,bashtop,nvim,vim}
 
 # Color Picker #
 super + p
@@ -218,7 +214,12 @@ super + shift + i
 	winmask		
 
 # tdrop
-super + u
-	tdrop -a -w 70% -h 35% -y 0 -x 15%  alacritty --config-file ~/.config/bspwm/alacritty/alacritty.toml --class=alacritty-float
+super + {u,n}
+	{tdrop -a -w 70% -h 35% -y 0 -x 15% alacritty --class=alacritty-float --config-file "$HOME/.config/bspwm/alacritty/alacritty.toml",\
+	hidden_show obsidian}
+
+# Rofi Network Menu #
+# super + n
+# 	nmd
 
 ## ---------- END ---------- ##

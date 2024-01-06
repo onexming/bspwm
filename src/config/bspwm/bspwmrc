@@ -142,7 +142,7 @@ BACKGROUND=$(grep -oP 'background = \K.*' "${BSPWM_DIR}/exodia.conf")
 feh --no-fehbg --bg-fill ${BACKGROUND}
 # ------------------------------------------------------------------------------ #
 
-declare -a start=(mpd fcitx5 nextcloud kdeconnect-indicator)
+declare -a start=(mpd fcitx5 nextcloud kdeconnect-indicator obsidian)
 for i in ${start[@]};do
 	if [[ ! `pidof $i` ]];then
 		$i &

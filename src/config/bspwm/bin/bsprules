@@ -158,5 +158,6 @@ else
    bspc rule -a stalonetray state=floating manage=off
    bspc rule -a gwenview state=floating follow=on focus=on
    bspc rule -a Galculator state=floating follow=on focus=on
+   bspc rule -a obsidian state=floating hidden=on
 
 fi
